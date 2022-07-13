@@ -1,0 +1,27 @@
+<html>
+<head>
+<script language="JavaScript">
+  function calculateValue() {
+    var radius = document.getElementById("inputDiameter").value / 2,
+        price  = document.getElementById("inputPrice").value,
+        pi     = 3.14,
+        area   = pi * radius * radius,
+        pricePerInch;
+    
+    pricePerInch = price / area; 
+
+    document.getElementById("pricePerInch").innerHTML = "The price per inch = " + pricePerInch;
+    document.getElementById("totalArea").innerHTML = "The total area = " + area;
+  }
+</script>
+</head>
+
+<body>
+  <div id="pricePerInch">&nbsp;</div>
+  <div id="totalArea">&nbsp;</div>
+  Diameter of pizza: <input type="text" id="inputDiameter" /> <br />
+  Price of pizza: <input type="text" id="inputPrice" /> <br/>
+  <input type="button" value="Calculate Value" onClick="calculateValue()" />
+</body>
+
+</html>
