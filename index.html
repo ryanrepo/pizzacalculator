@@ -2,25 +2,56 @@
 <head>
 <script language="JavaScript">
   function calculateValue() {
-    var radius = document.getElementById("inputDiameter").value / 2,
-        price  = document.getElementById("inputPrice").value,
-        pi     = 3.14,
-        area   = pi * radius * radius,
-        pricePerInch;
+    var radius1 = document.getElementById("inputDiameter1").value / 2,
+        radius2 = document.getElementById("inputDiameter2").value / 2,
+        price1  = document.getElementById("inputPrice1").value,
+        price2  = document.getElementById("inputPrice2").value,
+        pi = 3.14,
+        area1   = pi * radius1 * radius1,
+        area2   = pi * radius2 * radius2,
+        pricePerInch1,
+        pricePerInch2;
     
-    pricePerInch = price / area; 
+    pricePerInch1 = price1 / area1;
+    pricePerInch2 = price2 / area2;
 
-    document.getElementById("pricePerInch").innerHTML = "The price per inch = " + pricePerInch;
-    document.getElementById("totalArea").innerHTML = "The total area = " + area;
+    document.getElementById("pricePerInch1").innerHTML = "The price per inch = $" + pricePerInch1.toFixed(2);
+    document.getElementById("pricePerInch2").innerHTML = "The price per inch = $" + pricePerInch2.toFixed(2);
+    document.getElementById("totalArea1").innerHTML = "The total area = " + area1.toFixed(3);
+    document.getElementById("totalArea2").innerHTML = "The total area = " + area2.toFixed(3);
+      
+    highlightCheaperPizza(pricePerInch1, pricePerInch2);
+  }
+    
+  function highlightCheaperPizza(cost1, cost2) {
+    if (cost1 < cost2) {
+        //alert("Pizza 1 is cheaper!");
+        document.getElementById("pricePerInch1").style.backgroundColor = "lightgreen";
+        document.getElementById("pricePerInch2").style.backgroundColor = "white";
+    } else {
+        //alert("Pizza 2 is cheaper!");
+        document.getElementById("pricePerInch1").style.backgroundColor = "white";
+        document.getElementById("pricePerInch2").style.backgroundColor = "lightgreen";
+    }
   }
 </script>
 </head>
 
 <body>
-  <div id="pricePerInch">&nbsp;</div>
-  <div id="totalArea">&nbsp;</div>
-  Diameter of pizza: <input type="text" id="inputDiameter" /> <br />
-  Price of pizza: <input type="text" id="inputPrice" /> <br/>
+  <div><h2>Pizza 1</h2></div>
+  <div id="pricePerInch1">&nbsp;</div>
+  <div id="totalArea1">&nbsp;</div>
+  Diameter of pizza: <input type="text" id="inputDiameter1" /> <br />
+  Price of pizza: <input type="text" id="inputPrice1" /> <br/>
+  <hr />
+  
+  <div><h2>Pizza 2</h2></div>
+  <div id="pricePerInch2">&nbsp;</div>
+  <div id="totalArea2">&nbsp;</div>
+  Diameter of pizza: <input type="text" id="inputDiameter2" /> <br />
+  Price of pizza: <input type="text" id="inputPrice2" /> <br/>
+  <hr />
+    
   <input type="button" value="Calculate Value" onClick="calculateValue()" />
 </body>
 
