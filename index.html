@@ -15,10 +15,10 @@
     pricePerInch1 = price1 / area1;
     pricePerInch2 = price2 / area2;
 
-    document.getElementById("pricePerInch1").innerHTML = "The price per inch = $" + pricePerInch1.toFixed(2);
-    document.getElementById("pricePerInch2").innerHTML = "The price per inch = $" + pricePerInch2.toFixed(2);
-    document.getElementById("totalArea1").innerHTML = "The total area = " + area1.toFixed(3);
-    document.getElementById("totalArea2").innerHTML = "The total area = " + area2.toFixed(3);
+    document.getElementById("pricePerInch1").innerHTML = "The price per inch = $" + pricePerInch1.toFixed(2) + "<br/>";
+    document.getElementById("pricePerInch2").innerHTML = "The price per inch = $" + pricePerInch2.toFixed(2) + "<br/>";
+    document.getElementById("totalArea1").innerHTML = "The total area = " + area1.toFixed(3) + "<br/>";
+    document.getElementById("totalArea2").innerHTML = "The total area = " + area2.toFixed(3) + "<br/>";
       
     highlightCheaperPizza(pricePerInch1, pricePerInch2);
   }
@@ -37,22 +37,33 @@
 </script>
 </head>
 
-<body>
-  <div><h2>Pizza 1</h2></div>
-  <div id="pricePerInch1">&nbsp;</div>
-  <div id="totalArea1">&nbsp;</div>
-  Diameter of pizza: <input type="text" id="inputDiameter1" /> <br />
-  Price of pizza: <input type="text" id="inputPrice1" /> <br/>
+<body style="background-image: url('pizza.jpg');">
+  <div style="background-color: white;width: 500px;">
+  <div><h1>Pizza Calculator</h1></div>
   <hr />
   
-  <div><h2>Pizza 2</h2></div>
-  <div id="pricePerInch2">&nbsp;</div>
-  <div id="totalArea2">&nbsp;</div>
-  Diameter of pizza: <input type="text" id="inputDiameter2" /> <br />
-  Price of pizza: <input type="text" id="inputPrice2" /> <br/>
+
+  <h2>Pizza 1</h2>
+  <span id="pricePerInch1" style="margin-left:16px">&nbsp;</span>
+  <span id="totalArea1" style="margin-left:16px">&nbsp;</span>
+  <br/>
+  <span style="margin-left:16px">Diameter of pizza (in): <input type="text" id="inputDiameter1" /></span>
+  <br />
+  <span style="margin-left:16px">Price of pizza: <input type="text" id="inputPrice1" /></span>
+  <hr />
+  
+  <h2>Pizza 2</h2>
+  <span id="pricePerInch2" style="margin-left:16px">&nbsp;</span>
+  <span id="totalArea2" style="margin-left:16px">&nbsp;</span>
+  <br />
+  <span style="margin-left:16px">Diameter of pizza (in): <input type="text" id="inputDiameter2" /></span>
+  <br />
+  <span style="margin-left:16px">Price of pizza: <input type="text" id="inputPrice2" /></span>
   <hr />
     
   <input type="button" value="Calculate Value" onClick="calculateValue()" />
+  <br /><br />
+  </div>
 </body>
 
 </html>
