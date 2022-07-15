@@ -38,12 +38,12 @@
 </head>
 
 <body style="background-image: url('pizza.jpg');">
-  <div style="background-color: white;width: 500px;">
-  <div><h1>Pizza Calculator</h1></div>
+  <div width=300 height=300 style="background-color: white; width: 500px; position: relative; left:30%; top: 30%">
+  <div style="margin-left:16px"><h1>Pizza Calculator</h1></div>
   <hr />
   
 
-  <h2>Pizza 1</h2>
+  <h2 style="margin-left:16px">Pizza 1</h2>
   <span id="pricePerInch1" style="margin-left:16px">&nbsp;</span>
   <span id="totalArea1" style="margin-left:16px">&nbsp;</span>
   <br/>
@@ -52,7 +52,7 @@
   <span style="margin-left:16px">Price of pizza: <input type="text" id="inputPrice1" /></span>
   <hr />
   
-  <h2>Pizza 2</h2>
+  <h2 style="margin-left:16px">Pizza 2</h2>
   <span id="pricePerInch2" style="margin-left:16px">&nbsp;</span>
   <span id="totalArea2" style="margin-left:16px">&nbsp;</span>
   <br />
@@ -61,7 +61,7 @@
   <span style="margin-left:16px">Price of pizza: <input type="text" id="inputPrice2" /></span>
   <hr />
     
-  <input type="button" value="Calculate Value" onClick="calculateValue()" />
+  <input type="button" value="Calculate Value" onClick="calculateValue()" style="margin-left:16px" />
   <br /><br />
   </div>
 </body>
